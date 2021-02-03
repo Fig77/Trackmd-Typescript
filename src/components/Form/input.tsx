@@ -17,7 +17,7 @@ const InputForm = ({fatherId, labelText, fromType, i, inputFunction}: inputData)
     <div key={fatherId.concat(i)}>
       <label className="" >{labelText}</label>
       <div className="">
-       <input type={fromType} className="" onChange={(e) => inputFunction(e,i)} required/>
+       <input type={fromType} className="" onChange={ inputFunction !== undefined ? (e) => inputFunction(e,i) : () => {}} required/>
     </div>
     </div>
   );
