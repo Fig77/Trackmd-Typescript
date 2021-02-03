@@ -7,14 +7,29 @@ type inputFn = (e: React.FormEvent<HTMLInputElement>, i: number) => void;
 interface formParts {
   inputFields: [];
   subm: submitFn;
+  inputNum: number;
 }
 
-const inputgen = ():JSX.Element => {
-  return <InputForm labelText='' i={1} fatherId='1' fromType='a'></InputForm>
+const inputgen = (label:string, c:number, from:string):JSX.Element => {
+  return <InputForm labelText={label} i={c} fatherId={c+''} fromType={from}></InputForm>
 }
 
-const FormContainer = () => {
-  return <div></div>
+const FormContainer = ({inputFields, subm, inputNum}: formParts) => {
+
+  const inputForm = ():any[] => {
+    const concat = new Array();
+    let i: number = 0;
+    while i < inputNum {
+      concat.push(inputgen('',1,''))
+      i++;
+    }
+   return concat;
+  }
+
+  return (
+  	<form>
+  	  {inputForm()}
+   </form>);
 }
 
 export default FormContainer;
