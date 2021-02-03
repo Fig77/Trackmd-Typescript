@@ -5,11 +5,10 @@ type inputFn = (e: React.FormEvent<HTMLInputElement>, i: number) => void;
 
 interface inputData {
   labelText: string;
-  inputFunction: inputFn;
+  inputFunction?: inputFn;
   i: number;
   fatherId: string;
   fromType: string;
-
 }
 
 const InputForm = ({fatherId, labelText, fromType, i, inputFunction}: inputData) => { 
