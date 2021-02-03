@@ -29,6 +29,7 @@ const FormContainer = ({inputFields, subm, inputNum}: formParts) => {
   return (
   	<form>
   	  {inputForm()}
+  	  <button onSubmit={ () => subm }></button>
    </form>);
 }
 
