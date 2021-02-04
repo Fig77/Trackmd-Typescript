@@ -10,6 +10,20 @@ const Login = () => {
     // API call;
   };
 
+  const handleInput = (e: React.FormEvent<HTMLInputElement>, i: number):void => {
+    switch(i) {
+      case 0: {
+      	setUsername(e.target.value);
+      	break;
+      }
+      case 1: {
+      	setPassword(e.target.value);
+      	break;
+      } 
+      default: {}
+    }
+  } 
+
   return(
   <div>
     <h1>Welcome</h1>
