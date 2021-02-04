@@ -20,7 +20,7 @@ const FormContainer = ({inputFields, subm, inputNum}: formParts) => {
     const concat = new Array();
     let i: number = 0;
     while i < inputNum {
-      concat.push(inputgen('',1,''))
+      concat.push(inputgen('',i,''))
       i++;
     }
    return concat;
